@@ -32,7 +32,7 @@ class VectorImagePainter extends CustomPainter {
 
   VectorImagePainter({
     @required this.vectorDefinition,
-    @required this.baseImageSize,
+    this.baseImageSize,
     this.zoneWhereToDraw,
   });
 
