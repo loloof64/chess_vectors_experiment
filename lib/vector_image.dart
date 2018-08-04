@@ -1,3 +1,4 @@
+import 'dart:typed_data';
 import 'dart:ui' show Color, Offset, Path, Radius;
 
 import 'package:flutter/material.dart';
@@ -22,23 +23,55 @@ class VectorImagePainter extends CustomPainter {
   }
 }
 
-DrawingParameters mergeDrawingParameters(DrawingParameters thisDrawingParameters,
+DrawingParameters mergeDrawingParameters(
+    DrawingParameters thisDrawingParameters,
     DrawingParameters parentDrawingParameters) {
   DrawingParameters usedDrawingParameters = DrawingParameters(
-    fillColor: thisDrawingParameters.fillColor ?? parentDrawingParameters.fillColor,
-    strokeColor: thisDrawingParameters.strokeColor ?? parentDrawingParameters.strokeColor,
-    strokeWidth: thisDrawingParameters.strokeWidth ?? parentDrawingParameters.strokeWidth,
-  );
+      fillColor:
+          thisDrawingParameters.fillColor ?? parentDrawingParameters.fillColor,
+      strokeColor: thisDrawingParameters.strokeColor ??
+          parentDrawingParameters.strokeColor,
+      strokeWidth: thisDrawingParameters.strokeWidth ??
+          parentDrawingParameters.strokeWidth,
+      transformMatrixValues: thisDrawingParameters.transformMatrix ??
+          parentDrawingParameters.transformMatrix);
   return usedDrawingParameters;
+}
+
+Float64List convertListIntoMatrix4(List<double> matrixValues) {
+  if (matrixValues == null) return null;
+  return Float64List.fromList(<double>[
+    matrixValues[0],
+    matrixValues[1],
+    0.0,
+    0.0,
+    matrixValues[2],
+    matrixValues[3],
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    matrixValues[4],
+    matrixValues[5],
+    0.0,
+    1.0
+  ]);
 }
 
 class DrawingParameters {
   Color fillColor;
   Color strokeColor;
   double strokeWidth;
+  Float64List transformMatrix;
 
   DrawingParameters(
-      {this.fillColor, this.strokeColor, this.strokeWidth});
+      {this.fillColor,
+      this.strokeColor,
+      this.strokeWidth,
+      List<double> transformMatrixValues})
+      : transformMatrix = convertListIntoMatrix4(transformMatrixValues);
 
   @override
   String toString() {
@@ -46,6 +79,7 @@ class DrawingParameters {
         "fillColor = $fillColor,"
         "strokeColor = $strokeColor,"
         "strokeWidth = $strokeWidth,"
+        "transfromMatrix = $transformMatrix"
         ")";
   }
 }
@@ -55,7 +89,8 @@ abstract class VectorDrawableElement {
 
   VectorDrawableElement(this.drawingParameters);
 
-  void paintIntoCanvas(Canvas targetCanvas, DrawingParameters parentDrawingParameters);
+  void paintIntoCanvas(
+      Canvas targetCanvas, DrawingParameters parentDrawingParameters);
 }
 
 class VectorImageGroup extends VectorDrawableElement {
@@ -67,16 +102,15 @@ class VectorImageGroup extends VectorDrawableElement {
   }) : super(drawingParameters);
 
   @override
-  void paintIntoCanvas(Canvas targetCanvas, DrawingParameters parentDrawingParameters) {
-
+  void paintIntoCanvas(
+      Canvas targetCanvas, DrawingParameters parentDrawingParameters) {
     DrawingParameters usedDrawingParameters =
-      mergeDrawingParameters(drawingParameters, parentDrawingParameters);
+        mergeDrawingParameters(drawingParameters, parentDrawingParameters);
 
-    children.forEach((VectorDrawableElement currentChild){
+    children.forEach((VectorDrawableElement currentChild) {
       currentChild.paintIntoCanvas(targetCanvas, usedDrawingParameters);
     });
   }
-
 }
 
 class VectorImagePathDefinition extends VectorDrawableElement {
@@ -89,10 +123,15 @@ class VectorImagePathDefinition extends VectorDrawableElement {
         super(drawingParameters);
 
   @override
-  void paintIntoCanvas(Canvas targetCanvas, DrawingParameters parentDrawingParameters) {
-
+  void paintIntoCanvas(
+      Canvas targetCanvas, DrawingParameters parentDrawingParameters) {
     DrawingParameters usedDrawingParameters =
-      mergeDrawingParameters(drawingParameters, parentDrawingParameters);
+        mergeDrawingParameters(drawingParameters, parentDrawingParameters);
+
+    targetCanvas.save();
+    if (drawingParameters.transformMatrix != null) {
+      targetCanvas.transform(drawingParameters.transformMatrix);
+    }
 
     var commonPath = new Path();
     pathElements.forEach((PathElement element) {
@@ -109,6 +148,8 @@ class VectorImagePathDefinition extends VectorDrawableElement {
       ..style = PaintingStyle.fill
       ..color = usedDrawingParameters.fillColor;
     targetCanvas.drawPath(commonPath, fillPathPaint);
+
+    targetCanvas.restore();
   }
 }
 
