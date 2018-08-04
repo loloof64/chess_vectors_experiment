@@ -5,13 +5,13 @@ import 'package:meta/meta.dart';
 import 'package:tuple/tuple.dart';
 
 class VectorImagePainter extends CustomPainter {
-  List<VectorImagePathDefinition> vectorDefinition;
+  List<VectorImagePathGroup> vectorDefinition;
 
   VectorImagePainter(this.vectorDefinition);
 
   @override
   void paint(Canvas canvas, Size size) {
-    vectorDefinition.forEach((VectorImagePathDefinition pathDefinition) {
+    vectorDefinition.forEach((VectorImagePathGroup pathDefinition) {
 
       var commonPath = new Path();
       pathDefinition.pathElements.forEach((PathElement element) {
@@ -19,15 +19,15 @@ class VectorImagePainter extends CustomPainter {
       });
 
       var strokePathPaint = new Paint()
-        ..style = PaintingStyle.fill
+        ..style = PaintingStyle.stroke
         ..strokeWidth = 1.0
-        ..color = pathDefinition.fill;
+        ..color = pathDefinition.strokeColor;
       canvas.drawPath(commonPath, strokePathPaint);
 
       var fillPathPaint = new Paint()
         ..style = PaintingStyle.fill
         ..strokeWidth = 1.0
-        ..color = pathDefinition.fill;
+        ..color = pathDefinition.fillColor;
       canvas.drawPath(commonPath, fillPathPaint);
     });
 
@@ -40,15 +40,15 @@ class VectorImagePainter extends CustomPainter {
 }
 
 
-class VectorImagePathDefinition {
+class VectorImagePathGroup {
   List<PathElement> pathElements;
-  Color fill;
-  Color stroke;
+  Color fillColor;
+  Color strokeColor;
 
-  VectorImagePathDefinition({
+  VectorImagePathGroup({
     String path,
-    this.fill = Colors.white,
-    this.stroke = Colors.black
+    this.fillColor = Colors.white,
+    this.strokeColor = Colors.black
   }) : pathElements = parsePath(path);
 }
 
