@@ -79,9 +79,9 @@ class DrawingParameters {
       {this.fillColor,
       this.strokeColor,
       this.strokeWidth,
-        this.strokeLineCap,
-        this.strokeLineJoin,
-        this.strokeLineMiterLimit,
+      this.strokeLineCap,
+      this.strokeLineJoin,
+      this.strokeLineMiterLimit,
       List<double> transformMatrixValues})
       : transformMatrix = convertListIntoMatrix4(transformMatrixValues);
 
@@ -157,14 +157,15 @@ class VectorImagePathDefinition extends VectorDrawableElement {
       ..style = PaintingStyle.stroke
       ..color = usedDrawingParameters.strokeColor
       ..strokeWidth = usedDrawingParameters.strokeWidth;
-    if (usedDrawingParameters.strokeLineCap != null){
+    if (usedDrawingParameters.strokeLineCap != null) {
       strokePathPaint.strokeCap = usedDrawingParameters.strokeLineCap;
     }
-    if (usedDrawingParameters.strokeLineJoin != null){
+    if (usedDrawingParameters.strokeLineJoin != null) {
       strokePathPaint.strokeJoin = usedDrawingParameters.strokeLineJoin;
     }
-    if (usedDrawingParameters.strokeLineMiterLimit != null){
-      strokePathPaint.strokeMiterLimit = usedDrawingParameters.strokeLineMiterLimit;
+    if (usedDrawingParameters.strokeLineMiterLimit != null) {
+      strokePathPaint.strokeMiterLimit =
+          usedDrawingParameters.strokeLineMiterLimit;
     }
     targetCanvas.drawPath(commonPath, strokePathPaint);
 
