@@ -33,6 +33,12 @@ DrawingParameters mergeDrawingParameters(
           parentDrawingParameters.strokeColor,
       strokeWidth: thisDrawingParameters.strokeWidth ??
           parentDrawingParameters.strokeWidth,
+      strokeLineCap: thisDrawingParameters.strokeLineCap ??
+          parentDrawingParameters.strokeLineCap,
+      strokeLineJoin: thisDrawingParameters.strokeLineJoin ??
+          parentDrawingParameters.strokeLineJoin,
+      strokeLineMiterLimit: thisDrawingParameters.strokeLineMiterLimit ??
+          parentDrawingParameters.strokeLineMiterLimit,
       transformMatrixValues: thisDrawingParameters.transformMatrix ??
           parentDrawingParameters.transformMatrix);
   return usedDrawingParameters;
@@ -64,12 +70,18 @@ class DrawingParameters {
   Color fillColor;
   Color strokeColor;
   double strokeWidth;
+  StrokeCap strokeLineCap;
+  StrokeJoin strokeLineJoin;
+  double strokeLineMiterLimit;
   Float64List transformMatrix;
 
   DrawingParameters(
       {this.fillColor,
       this.strokeColor,
       this.strokeWidth,
+        this.strokeLineCap,
+        this.strokeLineJoin,
+        this.strokeLineMiterLimit,
       List<double> transformMatrixValues})
       : transformMatrix = convertListIntoMatrix4(transformMatrixValues);
 
@@ -79,6 +91,9 @@ class DrawingParameters {
         "fillColor = $fillColor,"
         "strokeColor = $strokeColor,"
         "strokeWidth = $strokeWidth,"
+        "strokeLineCap = $strokeLineCap,"
+        "strokeLineJoin = $strokeLineJoin,"
+        "strokeLineMiterLimit = $strokeLineMiterLimit,"
         "transfromMatrix = $transformMatrix"
         ")";
   }
@@ -142,6 +157,15 @@ class VectorImagePathDefinition extends VectorDrawableElement {
       ..style = PaintingStyle.stroke
       ..color = usedDrawingParameters.strokeColor
       ..strokeWidth = usedDrawingParameters.strokeWidth;
+    if (usedDrawingParameters.strokeLineCap != null){
+      strokePathPaint.strokeCap = usedDrawingParameters.strokeLineCap;
+    }
+    if (usedDrawingParameters.strokeLineJoin != null){
+      strokePathPaint.strokeJoin = usedDrawingParameters.strokeLineJoin;
+    }
+    if (usedDrawingParameters.strokeLineMiterLimit != null){
+      strokePathPaint.strokeMiterLimit = usedDrawingParameters.strokeLineMiterLimit;
+    }
     targetCanvas.drawPath(commonPath, strokePathPaint);
 
     var fillPathPaint = new Paint()

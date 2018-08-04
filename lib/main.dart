@@ -88,6 +88,9 @@ class MyChessVector extends StatelessWidget {
                 fillColor: null,
                 strokeColor: Colors.black,
                 strokeWidth: 1.5,
+                strokeLineCap: StrokeCap.round,
+                strokeLineJoin: StrokeJoin.round,
+                strokeLineMiterLimit: 4.0
               ))
         ]),
       ),
