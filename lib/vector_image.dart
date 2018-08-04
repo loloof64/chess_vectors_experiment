@@ -1,13 +1,55 @@
 import 'dart:ui' show Color, Offset, Path, Radius;
 
+import 'package:flutter/material.dart';
 import 'package:meta/meta.dart';
 import 'package:tuple/tuple.dart';
 
-class VectorElement {
-  PathElement path;
+class VectorImagePainter extends CustomPainter {
+  List<VectorImagePathDefinition> vectorDefinition;
+
+  VectorImagePainter(this.vectorDefinition);
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    vectorDefinition.forEach((VectorImagePathDefinition pathDefinition) {
+
+      var commonPath = new Path();
+      pathDefinition.pathElements.forEach((PathElement element) {
+        element.addToPath(commonPath);
+      });
+
+      var strokePathPaint = new Paint()
+        ..style = PaintingStyle.fill
+        ..strokeWidth = 1.0
+        ..color = pathDefinition.fill;
+      canvas.drawPath(commonPath, strokePathPaint);
+
+      var fillPathPaint = new Paint()
+        ..style = PaintingStyle.fill
+        ..strokeWidth = 1.0
+        ..color = pathDefinition.fill;
+      canvas.drawPath(commonPath, fillPathPaint);
+    });
+
+  }
+
+  @override
+  bool shouldRepaint(CustomPainter oldDelegate) {
+    return false;
+  }
+}
+
+
+class VectorImagePathDefinition {
+  List<PathElement> pathElements;
   Color fill;
   Color stroke;
-  
+
+  VectorImagePathDefinition({
+    String path,
+    this.fill = Colors.white,
+    this.stroke = Colors.black
+  }) : pathElements = parsePath(path);
 }
 
 abstract class PathElement {
