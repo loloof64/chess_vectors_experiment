@@ -22,32 +22,10 @@ class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-      appBar: new AppBar(
-        title: new Text('Chess vectors experiment'),
-        backgroundColor: Colors.blue,
-      ),
-      body: new Container(
-        decoration: BoxDecoration(color: Colors.red),
-        child: new Center(
-          child: new MyChessVector(size: 45.0),
+        appBar: new AppBar(
+          title: new Text('Chess vectors experiment'),
+          backgroundColor: Colors.blue,
         ),
-      ),
-    );
-  }
-}
-
-@immutable
-class MyChessVector extends StatelessWidget {
-  final double size;
-
-  MyChessVector({this.size});
-
-  @override
-  Widget build(BuildContext context) {
-    return new Container(
-      width: size,
-      height: size,
-      child: WhiteKnight(),
-    );
+        body: WhiteKnight(position: Offset(50.0, 90.0), size: 300.0));
   }
 }

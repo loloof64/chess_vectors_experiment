@@ -5,16 +5,49 @@ import 'package:flutter/material.dart';
 import 'package:meta/meta.dart';
 import 'package:tuple/tuple.dart';
 
+VectorImagePainter painterWithDrawingZoneAndBaseImageSizeSet(
+    VectorImagePainter originPainter, Rect zoneToSet, double baseImageSize) {
+  return VectorImagePainter(
+    vectorDefinition: originPainter.vectorDefinition,
+    zoneWhereToDraw: zoneToSet,
+    baseImageSize: baseImageSize,
+  );
+}
+
+abstract class BaseVector extends CustomPaint {
+  BaseVector({
+    @required VectorImagePainter painter,
+    @required double baseImageSize,
+    Rect drawingZone,
+  }) : super(
+            painter: painterWithDrawingZoneAndBaseImageSizeSet(
+                painter, drawingZone, baseImageSize));
+}
+
 class VectorImagePainter extends CustomPainter {
   List<VectorDrawableElement> vectorDefinition;
+  double baseImageSize;
+  Rect zoneWhereToDraw;
 
-  VectorImagePainter(this.vectorDefinition);
+  VectorImagePainter({
+    @required this.vectorDefinition,
+    @required this.baseImageSize,
+    this.zoneWhereToDraw,
+  });
 
   @override
   void paint(Canvas canvas, Size size) {
+    canvas.save();
+
+    canvas.translate(zoneWhereToDraw.left, zoneWhereToDraw.top);
+    canvas.scale(zoneWhereToDraw.width / baseImageSize,
+        zoneWhereToDraw.height / baseImageSize);
+
     vectorDefinition.forEach((VectorDrawableElement vectorElement) {
       vectorElement.paintIntoCanvas(canvas, vectorElement.drawingParameters);
     });
+
+    canvas.restore();
   }
 
   @override
@@ -325,12 +358,6 @@ class ArcElement extends PathElement {
         "center = $center"
         ")";
   }
-}
-
-List<List<PathElement>> parsePathList(List<String> pathList) {
-  return pathList.map((var currentPathStr) {
-    return parsePath(currentPathStr);
-  }).toList();
 }
 
 List<PathElement> parsePath(String pathStr) {
