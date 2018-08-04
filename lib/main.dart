@@ -28,8 +28,9 @@ class MyHomePage extends StatelessWidget {
         ),
         body: Row(
           children: <Widget>[
-            WhiteKnight(position: Offset.zero, size: 100.0),
-            BlackKnight(position: Offset(100.0, 0.0), size: 100.0),
+            WhiteKnight(position: Offset.zero, size: 50.0),
+            BlackKnight(position: Offset(50.0, 0.0), size: 50.0),
+            BlackBishop(position: Offset(100.0, 0.0), size: 50.0)
           ],
         ));
   }

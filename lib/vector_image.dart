@@ -203,10 +203,12 @@ class VectorImagePathDefinition extends VectorDrawableElement {
     }
     targetCanvas.drawPath(commonPath, strokePathPaint);
 
-    var fillPathPaint = new Paint()
-      ..style = PaintingStyle.fill
-      ..color = usedDrawingParameters.fillColor;
-    targetCanvas.drawPath(commonPath, fillPathPaint);
+    if (usedDrawingParameters.fillColor != null) {
+      var fillPathPaint = new Paint()
+        ..style = PaintingStyle.fill
+        ..color = usedDrawingParameters.fillColor;
+      targetCanvas.drawPath(commonPath, fillPathPaint);
+    }
 
     targetCanvas.restore();
   }

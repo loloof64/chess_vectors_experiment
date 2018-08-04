@@ -1,8 +1,7 @@
 # chess_vectors_experiment
 
-A new Flutter application.
+An attempt to render chess vectors into Flutter.
 
-## Getting Started
+# CREDITS
 
-For help getting started with Flutter, view our online
-[documentation](https://flutter.io/).
+Adapted chess vectors from Wikimedia page (https://commons.wikimedia.org/wiki/Category:SVG_chess_pieces).
