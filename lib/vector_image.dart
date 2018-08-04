@@ -6,11 +6,14 @@ import 'package:meta/meta.dart';
 import 'package:tuple/tuple.dart';
 
 VectorImagePainter painterWithDrawingZoneAndBaseImageSizeSet(
-    VectorImagePainter originPainter, Rect zoneToSet, double baseImageSize) {
+    VectorImagePainter originPainter,
+    Rect zoneToSet,
+    double baseImageSize
+) {
   return VectorImagePainter(
-    vectorDefinition: originPainter.vectorDefinition,
-    zoneWhereToDraw: zoneToSet,
-    baseImageSize: baseImageSize,
+      vectorDefinition: originPainter.vectorDefinition,
+      zoneWhereToDraw: zoneToSet,
+      baseImageSize: baseImageSize,
   );
 }
 
@@ -19,9 +22,7 @@ abstract class BaseVector extends CustomPaint {
     @required VectorImagePainter painter,
     @required double baseImageSize,
     Rect drawingZone,
-  }) : super(
-            painter: painterWithDrawingZoneAndBaseImageSizeSet(
-                painter, drawingZone, baseImageSize));
+  }): super(painter: painterWithDrawingZoneAndBaseImageSizeSet(painter, drawingZone, baseImageSize));
 }
 
 class VectorImagePainter extends CustomPainter {

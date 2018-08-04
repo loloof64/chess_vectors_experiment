@@ -26,6 +26,11 @@ class MyHomePage extends StatelessWidget {
           title: new Text('Chess vectors experiment'),
           backgroundColor: Colors.blue,
         ),
-        body: WhiteKnight(position: Offset(50.0, 90.0), size: 300.0));
+        body: Row(
+          children: <Widget>[
+            WhiteKnight(position: Offset.zero, size: 100.0),
+            BlackKnight(position: Offset(100.0, 0.0), size: 100.0),
+          ],
+        ));
   }
 }
