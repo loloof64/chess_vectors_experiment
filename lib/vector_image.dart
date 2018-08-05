@@ -166,11 +166,46 @@ class VectorImageGroup extends VectorDrawableElement {
   }
 }
 
+class VectorCircle extends VectorDrawableElement {
+  Offset position;
+  double radius;
+
+  VectorCircle({
+    @required this.position,
+    @required this.radius,
+    DrawingParameters drawingParameters}):super(drawingParameters);
+
+  @override
+  void paintIntoCanvas(Canvas targetCanvas, DrawingParameters parentDrawingParameters) {
+    DrawingParameters usedDrawingParameters =
+      mergeDrawingParameters(drawingParameters, parentDrawingParameters);
+
+    var commonPath = new Path()
+      ..addOval(Rect.fromPoints(
+          position.translate(-radius, -radius),
+          position.translate(radius, radius)
+      ));
+
+    var strokePathPaint = new Paint()
+      ..style = PaintingStyle.stroke
+      ..color = usedDrawingParameters.strokeColor
+      ..strokeWidth = usedDrawingParameters.strokeWidth;
+    targetCanvas.drawPath(commonPath, strokePathPaint);
+
+    if (usedDrawingParameters.fillColor != null) {
+      var fillPathPaint = new Paint()
+        ..style = PaintingStyle.fill
+        ..color = usedDrawingParameters.fillColor;
+      targetCanvas.drawPath(commonPath, fillPathPaint);
+    }
+  }
+}
+
 class VectorImagePathDefinition extends VectorDrawableElement {
   List<PathElement> pathElements;
 
   VectorImagePathDefinition({
-    String path,
+    @required String path,
     DrawingParameters drawingParameters,
   })  : pathElements = parsePath(path),
         super(drawingParameters);

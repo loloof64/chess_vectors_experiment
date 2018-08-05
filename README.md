@@ -54,7 +54,7 @@ class MyHomePage extends StatelessWidget {
 
 [X] White Queen
 
-[ ] Black Queen
+[X] Black Queen
 
 [ ] White King
 
