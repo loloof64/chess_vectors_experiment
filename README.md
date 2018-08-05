@@ -10,23 +10,55 @@ components into your own Widgets.
 A simple example :
 
 ```
+import 'package:chess_vectors_experiment/chess_vectors.dart';
+import 'package:flutter/material.dart';
+
+...
+
 class MyHomePage extends StatelessWidget {
   MyHomePage({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    const commonSize = 50.0;
     return new Scaffold(
         appBar: new AppBar(
           title: new Text('Chess vectors experiment'),
           backgroundColor: Colors.blue,
         ),
-        body: Row(
-          children: <Widget>[
-            WhiteKnight(position: Offset.zero, size: 50.0),
-            BlackKnight(position: Offset(50.0, 0.0), size: 50.0),
-            BlackBishop(position: Offset(100.0, 0.0), size: 50.0)
-          ],
-        ));
+        body: Container(
+            decoration: BoxDecoration(
+              color: Colors.red,
+            ),
+            child: Column(
+              children: <Widget>[
+                Row(
+                  children: <Widget>[
+                    WhitePawn(size: commonSize),
+                    WhiteKnight(size: commonSize),
+                    WhiteBishop(size: commonSize),
+                    WhiteRook(size: commonSize),
+                    WhiteQueen(size: commonSize),
+                    WhiteKing(size: commonSize)
+                  ],
+                ),
+                Row(
+                  children: <Widget>[
+                    BlackPawn(size: commonSize),
+                    BlackKnight(size: commonSize),
+                    BlackBishop(size: commonSize),
+                    BlackRook(size: commonSize),
+                    BlackQueen(size: commonSize),
+                    BlackKing(size: commonSize)
+                  ],
+                ),
+                Row(
+                  children: <Widget>[
+                    WhiteRook(position: Offset(20.0, 5.0), size: 60.0)
+                  ],
+                )
+              ],
+            )));
   }
 }
 ```
@@ -56,9 +88,9 @@ class MyHomePage extends StatelessWidget {
 
 [X] Black Queen
 
-[ ] White King
+[X] White King
 
-[ ] Black King
+[X] Black King
 
 ## CREDITS
 

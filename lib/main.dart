@@ -50,6 +50,12 @@ class MyHomePage extends StatelessWidget {
                     BlackBishop(size: commonSize),
                     BlackRook(size: commonSize),
                     BlackQueen(size: commonSize),
+                    BlackKing(size: commonSize)
+                  ],
+                ),
+                Row(
+                  children: <Widget>[
+                    WhiteRook(position: Offset(20.0, 5.0), size: 60.0)
                   ],
                 )
               ],

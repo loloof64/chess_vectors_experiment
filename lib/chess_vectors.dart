@@ -630,3 +630,73 @@ class WhiteKing extends VectorBase {
                       strokeLineMiterLimit: 4.0))
             ]));
 }
+
+class BlackKing extends VectorBase {
+  BlackKing({Offset position = Offset.zero, double size = 45.0})
+      : super(
+  drawingZone: position & Size.square(size),
+  baseImageSize: 45.0,
+  painter:
+  VectorImagePainter(vectorDefinition: <VectorDrawableElement>[
+  VectorImageGroup(
+  children: <VectorDrawableElement>[
+    VectorImagePathDefinition(
+      path: "M 22.5,11.63 L 22.5,6",
+      drawingParameters: DrawingParameters(
+        fillColor: null,
+        strokeColor: Colors.black,
+        strokeLineJoin: StrokeJoin.miter
+      )
+    ),
+    VectorImagePathDefinition(
+      path: "M 22.5,25 C 22.5,25 27,17.5 25.5,14.5 C 25.5,14.5 24.5,12 22.5,12 C"
+          " 20.5,12 19.5,14.5 19.5,14.5 C 18,17.5 22.5,25 22.5,25",
+      drawingParameters: DrawingParameters(
+        fillColor: Colors.black,
+        strokeLineJoin: StrokeJoin.miter,
+        strokeLineCap: StrokeCap.butt
+      )
+    ),
+    VectorImagePathDefinition(
+      path: "M 11.5,37 C 17,40.5 27,40.5 32.5,37 L 32.5,30 C 32.5,30 41.5,25.5"
+          " 38.5,19.5 C 34.5,13 25,16 22.5,23.5 L 22.5,27 L 22.5,23.5 C 19,16 "
+          "9.5,13 6.5,19.5 C 3.5,25.5 11.5,29.5 11.5,29.5 L 11.5,37 z ",
+      drawingParameters: DrawingParameters(
+        fillColor: Colors.black,
+        strokeColor: Colors.black
+      )
+    ),
+    VectorImagePathDefinition(
+      path: "M 20,8 L 25,8",
+      drawingParameters: DrawingParameters(
+        fillColor: null,
+        strokeColor: Colors.black,
+        strokeLineJoin: StrokeJoin.miter
+      )
+    ),
+    VectorImagePathDefinition(
+      path: "M 32,29.5 C 32,29.5 40.5,25.5 38.03,19.85 C 34.15,14 25,18 22.5,"
+          "24.5 L 22.51,26.6 L 22.5,24.5 C 20,18 9.906,14 6.997,19.85 C 4.5,25.5"
+          " 11.85,28.85 11.85,28.85",
+      drawingParameters: DrawingParameters(
+        fillColor: null,
+        strokeColor: Colors.white
+      )
+    ),
+    VectorImagePathDefinition(
+      path: "M 11.5,30 C 17,27 27,27 32.5,30 M 11.5,33.5 C 17,30.5 27,30.5 32.5,"
+          "33.5 M 11.5,37 C 17,34 27,34 32.5,37",
+      drawingParameters: DrawingParameters(
+          fillColor: null,
+          strokeColor: Colors.white
+      )
+    )
+  ],
+      drawingParameters: DrawingParameters(
+          fillColor: null,
+          strokeColor: Colors.black,
+          strokeWidth: 1.5,
+          strokeLineCap: StrokeCap.round,
+          strokeLineJoin: StrokeJoin.round,
+          strokeLineMiterLimit: 4.0)),]));
+}
