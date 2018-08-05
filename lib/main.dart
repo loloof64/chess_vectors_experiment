@@ -33,7 +33,8 @@ class MyHomePage extends StatelessWidget {
             WhiteKnight(position: Offset(50.0, 0.0), size: 50.0),
             BlackKnight(position: Offset(50.0, 50.0), size: 50.0),
             WhiteBishop(position: Offset(100.0, 0.0), size: 50.0),
-            BlackBishop(position: Offset(100.0, 50.0), size: 50.0)
+            BlackBishop(position: Offset(100.0, 50.0), size: 50.0),
+            WhiteRook(position: Offset(150.0, 0.0), size: 50.0),
           ],
         ));
   }
