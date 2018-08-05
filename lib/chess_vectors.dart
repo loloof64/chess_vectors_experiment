@@ -1,7 +1,7 @@
 import 'package:chess_vectors_experiment/vector_image.dart';
 import 'package:flutter/material.dart';
 
-class WhitePawn extends BaseVector {
+class WhitePawn extends VectorBase {
   WhitePawn({Offset position = Offset.zero, double size = 45.0})
       : super(
             drawingZone: position & Size.square(size),
@@ -26,7 +26,7 @@ class WhitePawn extends BaseVector {
             ]));
 }
 
-class BlackPawn extends BaseVector {
+class BlackPawn extends VectorBase {
   BlackPawn({Offset position = Offset.zero, double size = 45.0})
       : super(
             drawingZone: position & Size.square(size),
@@ -51,7 +51,7 @@ class BlackPawn extends BaseVector {
             ]));
 }
 
-class WhiteKnight extends BaseVector {
+class WhiteKnight extends VectorBase {
   WhiteKnight({Offset position = Offset.zero, double size = 45.0})
       : super(
           drawingZone: position & Size.square(size),
@@ -103,7 +103,7 @@ class WhiteKnight extends BaseVector {
         );
 }
 
-class BlackKnight extends BaseVector {
+class BlackKnight extends VectorBase {
   BlackKnight({Offset position = Offset.zero, double size = 45.0})
       : super(
           drawingZone: position & Size.square(size),
@@ -167,7 +167,7 @@ class BlackKnight extends BaseVector {
         );
 }
 
-class WhiteBishop extends BaseVector {
+class WhiteBishop extends VectorBase {
   WhiteBishop({Offset position = Offset.zero, double size = 45.0})
       : super(
             drawingZone: position & Size.square(size),
@@ -220,7 +220,7 @@ class WhiteBishop extends BaseVector {
             ]));
 }
 
-class BlackBishop extends BaseVector {
+class BlackBishop extends VectorBase {
   BlackBishop({Offset position = Offset.zero, double size = 45.0})
       : super(
           drawingZone: position & Size.square(size),
@@ -272,7 +272,7 @@ class BlackBishop extends BaseVector {
         );
 }
 
-class WhiteRook extends BaseVector {
+class WhiteRook extends VectorBase {
   WhiteRook({Offset position = Offset.zero, double size = 45.0})
       : super(
             drawingZone: position & Size.square(size),
@@ -323,7 +323,7 @@ class WhiteRook extends BaseVector {
             ]));
 }
 
-class BlackRoot extends BaseVector {
+class BlackRoot extends VectorBase {
   BlackRoot({Offset position = Offset.zero, double size = 45.0})
       : super(
             drawingZone: position & Size.square(size),
@@ -414,7 +414,7 @@ class BlackRoot extends BaseVector {
             ]));
 }
 
-class WhiteQueen extends BaseVector {
+class WhiteQueen extends VectorBase {
   WhiteQueen({Offset position = Offset.zero, double size = 45.0})
       : super(
             drawingZone: position & Size.square(size),
@@ -477,109 +477,150 @@ class WhiteQueen extends BaseVector {
             ]));
 }
 
-class BlackQueen extends BaseVector {
+class BlackQueen extends VectorBase {
   BlackQueen({Offset position = Offset.zero, double size = 45.0})
       : super(
-  drawingZone: position & Size.square(size),
-  baseImageSize: 45.0,
-  painter:
-  VectorImagePainter(vectorDefinition: <VectorDrawableElement>[
-  VectorImageGroup(
-    children: <VectorDrawableElement>[
-      VectorImageGroup(
-        children: <VectorDrawableElement>[
-          VectorCircle(
-            position: Offset(6.0, 12.0),
-            radius: 2.75,
-            drawingParameters: DrawingParameters()
-          ),
-          VectorCircle(
-              position: Offset(14.0, 9.0),
-              radius: 2.75,
-              drawingParameters: DrawingParameters()
-          ),
-          VectorCircle(
-              position: Offset(22.5, 8.0),
-              radius: 2.75,
-              drawingParameters: DrawingParameters()
-          ),
-          VectorCircle(
-              position: Offset(31.0, 9.0),
-              radius: 2.75,
-              drawingParameters: DrawingParameters()
-          ),
-          VectorCircle(
-              position: Offset(39.0, 12.0),
-              radius: 2.75,
-              drawingParameters: DrawingParameters()
-          ),
-        ],
-        drawingParameters: DrawingParameters(
-          fillColor: Colors.black,
-          strokeColor: null,
-        )
-      ),
-      VectorImagePathDefinition(
-        path: "M 9,26 C 17.5,24.5 30,24.5 36,26 L 38.5,13.5 L 31,25 L 30.7,10.9 "
-            "L 25.5,24.5 L 22.5,10 L 19.5,24.5 L 14.3,10.9 L 14,25 L 6.5,13.5 "
-            "L 9,26 z",
-        drawingParameters: DrawingParameters(
-          strokeLineCap: StrokeCap.butt,
-          strokeColor: Colors.black
-        )
-      ),
-      VectorImagePathDefinition(
-        path: "M 9,26 C 9,28 10.5,28 11.5,30 C 12.5,31.5 12.5,31 12,33.5 C 10.5,"
-            "34.5 10.5,36 10.5,36 C 9,37.5 11,38.5 11,38.5 C 17.5,39.5 27.5,39.5"
-            " 34,38.5 C 34,38.5 35.5,37.5 34,36 C 34,36 34.5,34.5 33,33.5 C "
-            "32.5,31 32.5,31.5 33.5,30 C 34.5,28 36,28 36,26 C 27.5,24.5 17.5,"
-            "24.5 9,26 z",
-        drawingParameters: DrawingParameters(
-          strokeLineCap: StrokeCap.butt
-        )
-      ),
-      VectorImagePathDefinition(
-        path: "M 11,38.5 A 35,35 1 0 0 34,38.5",
-        drawingParameters: DrawingParameters(
-          strokeLineCap: StrokeCap.butt
-        )
-      ),
-      VectorImagePathDefinition(
-        path: "M 11,29 A 35,35 1 0 1 34,29",
-        drawingParameters: DrawingParameters(
-          fillColor: null,
-          strokeColor: Colors.white
-        )
-      ),
-      VectorImagePathDefinition(
-          path: "M 12.5,31.5 L 32.5,31.5",
-          drawingParameters: DrawingParameters(
-              fillColor: null,
-              strokeColor: Colors.white
-          )
-      ),
-      VectorImagePathDefinition(
-          path: "M 11.5,34.5 A 35,35 1 0 0 33.5,34.5",
-          drawingParameters: DrawingParameters(
-              fillColor: null,
-              strokeColor: Colors.white
-          )
-      ),
-      VectorImagePathDefinition(
-          path: "M 10.5,37.5 A 35,35 1 0 0 34.5,37.5",
-          drawingParameters: DrawingParameters(
-              fillColor: null,
-              strokeColor: Colors.white
-          )
-      ),
-    ],
-    drawingParameters: DrawingParameters(
-      fillColor: Colors.black,
-      strokeColor: Colors.black,
-      strokeWidth: 1.5,
-      strokeLineMiterLimit: 4.0,
-      strokeLineJoin: StrokeJoin.round,
-      strokeLineCap: StrokeCap.round
-    )
-  )]));
+            drawingZone: position & Size.square(size),
+            baseImageSize: 45.0,
+            painter:
+                VectorImagePainter(vectorDefinition: <VectorDrawableElement>[
+              VectorImageGroup(
+                  children: <VectorDrawableElement>[
+                    VectorImageGroup(
+                        children: <VectorDrawableElement>[
+                          VectorCircle(
+                              position: Offset(6.0, 12.0),
+                              radius: 2.75,
+                              drawingParameters: DrawingParameters()),
+                          VectorCircle(
+                              position: Offset(14.0, 9.0),
+                              radius: 2.75,
+                              drawingParameters: DrawingParameters()),
+                          VectorCircle(
+                              position: Offset(22.5, 8.0),
+                              radius: 2.75,
+                              drawingParameters: DrawingParameters()),
+                          VectorCircle(
+                              position: Offset(31.0, 9.0),
+                              radius: 2.75,
+                              drawingParameters: DrawingParameters()),
+                          VectorCircle(
+                              position: Offset(39.0, 12.0),
+                              radius: 2.75,
+                              drawingParameters: DrawingParameters()),
+                        ],
+                        drawingParameters: DrawingParameters(
+                          fillColor: Colors.black,
+                          strokeColor: null,
+                        )),
+                    VectorImagePathDefinition(
+                        path:
+                            "M 9,26 C 17.5,24.5 30,24.5 36,26 L 38.5,13.5 L 31,25 L 30.7,10.9 "
+                            "L 25.5,24.5 L 22.5,10 L 19.5,24.5 L 14.3,10.9 L 14,25 L 6.5,13.5 "
+                            "L 9,26 z",
+                        drawingParameters: DrawingParameters(
+                            strokeLineCap: StrokeCap.butt,
+                            strokeColor: Colors.black)),
+                    VectorImagePathDefinition(
+                        path:
+                            "M 9,26 C 9,28 10.5,28 11.5,30 C 12.5,31.5 12.5,31 12,33.5 C 10.5,"
+                            "34.5 10.5,36 10.5,36 C 9,37.5 11,38.5 11,38.5 C 17.5,39.5 27.5,39.5"
+                            " 34,38.5 C 34,38.5 35.5,37.5 34,36 C 34,36 34.5,34.5 33,33.5 C "
+                            "32.5,31 32.5,31.5 33.5,30 C 34.5,28 36,28 36,26 C 27.5,24.5 17.5,"
+                            "24.5 9,26 z",
+                        drawingParameters:
+                            DrawingParameters(strokeLineCap: StrokeCap.butt)),
+                    VectorImagePathDefinition(
+                        path: "M 11,38.5 A 35,35 1 0 0 34,38.5",
+                        drawingParameters:
+                            DrawingParameters(strokeLineCap: StrokeCap.butt)),
+                    VectorImagePathDefinition(
+                        path: "M 11,29 A 35,35 1 0 1 34,29",
+                        drawingParameters: DrawingParameters(
+                            fillColor: null, strokeColor: Colors.white)),
+                    VectorImagePathDefinition(
+                        path: "M 12.5,31.5 L 32.5,31.5",
+                        drawingParameters: DrawingParameters(
+                            fillColor: null, strokeColor: Colors.white)),
+                    VectorImagePathDefinition(
+                        path: "M 11.5,34.5 A 35,35 1 0 0 33.5,34.5",
+                        drawingParameters: DrawingParameters(
+                            fillColor: null, strokeColor: Colors.white)),
+                    VectorImagePathDefinition(
+                        path: "M 10.5,37.5 A 35,35 1 0 0 34.5,37.5",
+                        drawingParameters: DrawingParameters(
+                            fillColor: null, strokeColor: Colors.white)),
+                  ],
+                  drawingParameters: DrawingParameters(
+                      fillColor: Colors.black,
+                      strokeColor: Colors.black,
+                      strokeWidth: 1.5,
+                      strokeLineMiterLimit: 4.0,
+                      strokeLineJoin: StrokeJoin.round,
+                      strokeLineCap: StrokeCap.round))
+            ]));
+}
+
+class WhiteKing extends VectorBase {
+  WhiteKing({Offset position = Offset.zero, double size = 45.0})
+      : super(
+            drawingZone: position & Size.square(size),
+            baseImageSize: 45.0,
+            painter:
+                VectorImagePainter(vectorDefinition: <VectorDrawableElement>[
+              VectorImageGroup(
+                  children: <VectorDrawableElement>[
+                    VectorImagePathDefinition(
+                        path: "M 22.5,11.63 L 22.5,6",
+                        drawingParameters: DrawingParameters(
+                            fillColor: null,
+                            strokeColor: Colors.black,
+                            strokeLineJoin: StrokeJoin.miter)),
+                    VectorImagePathDefinition(
+                        path: "M 20,8 L 25,8",
+                        drawingParameters: DrawingParameters(
+                            fillColor: null,
+                            strokeColor: Colors.black,
+                            strokeLineJoin: StrokeJoin.miter)),
+                    VectorImagePathDefinition(
+                        path:
+                            "M 22.5,25 C 22.5,25 27,17.5 25.5,14.5 C 25.5,14.5 "
+                                "24.5,12 22.5,12 C 20.5,12 19.5,14.5 19.5,14.5 C"
+                                " 18,17.5 22.5,25 22.5,25",
+                        drawingParameters: DrawingParameters(
+                            fillColor: Colors.white,
+                            strokeColor: Colors.black,
+                            strokeLineCap: StrokeCap.butt,
+                            strokeLineJoin: StrokeJoin.miter)),
+                    VectorImagePathDefinition(
+                        path:
+                            "M 11.5,37 C 17,40.5 27,40.5 32.5,37 L 32.5,30 C"
+                                " 32.5,30 41.5,25.5 38.5,19.5 C 34.5,13 25,16"
+                                " 22.5,23.5 L 22.5,27 L 22.5,23.5 C 19,16 9.5,13"
+                                " 6.5,19.5 C 3.5,25.5 11.5,29.5 11.5,29.5 L"
+                                " 11.5,37 z ",
+                        drawingParameters: DrawingParameters(
+                            fillColor: Colors.white,
+                            strokeColor: Colors.black)),
+                    VectorImagePathDefinition(
+                        path: "M 11.5,30 C 17,27 27,27 32.5,30",
+                        drawingParameters: DrawingParameters(
+                            fillColor: null, strokeColor: Colors.black)),
+                    VectorImagePathDefinition(
+                        path: "M 11.5,33.5 C 17,30.5 27,30.5 32.5,33.5",
+                        drawingParameters: DrawingParameters(
+                            fillColor: null, strokeColor: Colors.black)),
+                    VectorImagePathDefinition(
+                        path: "M 11.5,37 C 17,34 27,34 32.5,37",
+                        drawingParameters: DrawingParameters(
+                            fillColor: null, strokeColor: Colors.black)),
+                  ],
+                  drawingParameters: DrawingParameters(
+                      fillColor: null,
+                      strokeColor: Colors.black,
+                      strokeWidth: 1.5,
+                      strokeLineCap: StrokeCap.round,
+                      strokeLineJoin: StrokeJoin.round,
+                      strokeLineMiterLimit: 4.0))
+            ]));
 }

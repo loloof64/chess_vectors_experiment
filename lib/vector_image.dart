@@ -14,8 +14,8 @@ VectorImagePainter painterWithDrawingZoneAndBaseImageSizeSet(
   );
 }
 
-abstract class BaseVector extends CustomPaint {
-  BaseVector({
+abstract class VectorBase extends CustomPaint {
+  VectorBase({
     @required VectorImagePainter painter,
     @required double baseImageSize,
     Rect drawingZone,
@@ -186,18 +186,18 @@ class VectorCircle extends VectorDrawableElement {
           position.translate(radius, radius)
       ));
 
-    var strokePathPaint = new Paint()
-      ..style = PaintingStyle.stroke
-      ..color = usedDrawingParameters.strokeColor
-      ..strokeWidth = usedDrawingParameters.strokeWidth;
-    targetCanvas.drawPath(commonPath, strokePathPaint);
-
     if (usedDrawingParameters.fillColor != null) {
       var fillPathPaint = new Paint()
         ..style = PaintingStyle.fill
         ..color = usedDrawingParameters.fillColor;
       targetCanvas.drawPath(commonPath, fillPathPaint);
     }
+
+    var strokePathPaint = new Paint()
+      ..style = PaintingStyle.stroke
+      ..color = usedDrawingParameters.strokeColor
+      ..strokeWidth = usedDrawingParameters.strokeWidth;
+    targetCanvas.drawPath(commonPath, strokePathPaint);
   }
 }
 
