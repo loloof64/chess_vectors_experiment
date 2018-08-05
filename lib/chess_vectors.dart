@@ -275,164 +275,204 @@ class BlackBishop extends BaseVector {
 class WhiteRook extends BaseVector {
   WhiteRook({Offset position = Offset.zero, double size = 45.0})
       : super(
-  drawingZone: position & Size.square(size),
-  baseImageSize: 45.0,
-  painter: VectorImagePainter(vectorDefinition: <VectorDrawableElement>[
-  VectorImageGroup(
-  children: <VectorDrawableElement>[
-    VectorImagePathDefinition(
-      path: "M 9,39 L 36,39 L 36,36 L 9,36 L 9,39 z ",
-      drawingParameters: DrawingParameters(
-        strokeLineCap: StrokeCap.butt
-      )
-    ),
-    VectorImagePathDefinition(
-      path: "M 12,36 L 12,32 L 33,32 L 33,36 L 12,36 z ",
-      drawingParameters: DrawingParameters(
-          strokeLineCap: StrokeCap.butt
-      )
-    ),
-    VectorImagePathDefinition(
-        path: "M 11,14 L 11,9 L 15,9 L 15,11 L 20,11 L 20,9 L 25,9 L 25,11 L"
-            " 30,11 L 30,9 L 34,9 L 34,14",
-        drawingParameters: DrawingParameters(
-            strokeLineCap: StrokeCap.butt
-        )
-    ),
-    VectorImagePathDefinition(
-      path: "M 34,14 L 31,17 L 14,17 L 11,14",
-      drawingParameters: DrawingParameters()
-    ),
-    VectorImagePathDefinition(
-      path: "M 31,17 L 31,29.5 L 14,29.5 L 14,17",
-      drawingParameters: DrawingParameters(
-        strokeLineCap: StrokeCap.butt,
-        strokeLineJoin: StrokeJoin.miter
-      )
-    ),
-    VectorImagePathDefinition(
-      path: "M 31,29.5 L 32.5,32 L 12.5,32 L 14,29.5",
-      drawingParameters: DrawingParameters()
-    ),
-    VectorImagePathDefinition(
-      path: "M 11,14 L 34,14",
-      drawingParameters: DrawingParameters(
-        fillColor: null,
-        strokeColor: Colors.black,
-        strokeLineJoin: StrokeJoin.miter
-      )
-    )
-    ],
-  drawingParameters: DrawingParameters(
-      fillColor: null,
-      strokeColor: Colors.black,
-      strokeWidth: 1.5,
-      strokeLineCap: StrokeCap.round,
-      strokeLineJoin: StrokeJoin.round,
-      strokeLineMiterLimit: 4.0))]));
+            drawingZone: position & Size.square(size),
+            baseImageSize: 45.0,
+            painter:
+                VectorImagePainter(vectorDefinition: <VectorDrawableElement>[
+              VectorImageGroup(
+                  children: <VectorDrawableElement>[
+                    VectorImagePathDefinition(
+                        path: "M 9,39 L 36,39 L 36,36 L 9,36 L 9,39 z ",
+                        drawingParameters:
+                            DrawingParameters(strokeLineCap: StrokeCap.butt)),
+                    VectorImagePathDefinition(
+                        path: "M 12,36 L 12,32 L 33,32 L 33,36 L 12,36 z ",
+                        drawingParameters:
+                            DrawingParameters(strokeLineCap: StrokeCap.butt)),
+                    VectorImagePathDefinition(
+                        path:
+                            "M 11,14 L 11,9 L 15,9 L 15,11 L 20,11 L 20,9 L 25,9 L 25,11 L"
+                            " 30,11 L 30,9 L 34,9 L 34,14",
+                        drawingParameters:
+                            DrawingParameters(strokeLineCap: StrokeCap.butt)),
+                    VectorImagePathDefinition(
+                        path: "M 34,14 L 31,17 L 14,17 L 11,14",
+                        drawingParameters: DrawingParameters()),
+                    VectorImagePathDefinition(
+                        path: "M 31,17 L 31,29.5 L 14,29.5 L 14,17",
+                        drawingParameters: DrawingParameters(
+                            strokeLineCap: StrokeCap.butt,
+                            strokeLineJoin: StrokeJoin.miter)),
+                    VectorImagePathDefinition(
+                        path: "M 31,29.5 L 32.5,32 L 12.5,32 L 14,29.5",
+                        drawingParameters: DrawingParameters()),
+                    VectorImagePathDefinition(
+                        path: "M 11,14 L 34,14",
+                        drawingParameters: DrawingParameters(
+                            fillColor: null,
+                            strokeColor: Colors.black,
+                            strokeLineJoin: StrokeJoin.miter))
+                  ],
+                  drawingParameters: DrawingParameters(
+                      fillColor: null,
+                      strokeColor: Colors.black,
+                      strokeWidth: 1.5,
+                      strokeLineCap: StrokeCap.round,
+                      strokeLineJoin: StrokeJoin.round,
+                      strokeLineMiterLimit: 4.0))
+            ]));
 }
 
 class BlackRoot extends BaseVector {
   BlackRoot({Offset position = Offset.zero, double size = 45.0})
       : super(
-  drawingZone: position & Size.square(size),
-  baseImageSize: 45.0,
-  painter: VectorImagePainter(vectorDefinition: <VectorDrawableElement>[
-  VectorImageGroup(
-  children: <VectorDrawableElement>[
-    VectorImagePathDefinition(
-      path: "M 9,39 L 36,39 L 36,36 L 9,36 L 9,39 z ",
-      drawingParameters: DrawingParameters(
-        strokeLineCap: StrokeCap.butt
-      )
-    ),
-    VectorImagePathDefinition(
-        path: "M 12.5,32 L 14,29.5 L 31,29.5 L 32.5,32 L 12.5,32 z ",
-        drawingParameters: DrawingParameters(
-            strokeLineCap: StrokeCap.butt
-        )
-    ),
-    VectorImagePathDefinition(
-        path: "M 12,36 L 12,32 L 33,32 L 33,36 L 12,36 z ",
-        drawingParameters: DrawingParameters(
-            strokeLineCap: StrokeCap.butt
-        )
-    ),
-    VectorImagePathDefinition(
-      path: "M 14,29.5 L 14,16.5 L 31,16.5 L 31,29.5 L 14,29.5 z ",
-      drawingParameters: DrawingParameters(
-        strokeLineCap: StrokeCap.butt,
-        strokeLineJoin: StrokeJoin.miter
-      )
-    ),
-    VectorImagePathDefinition(
-      path: "M 14,16.5 L 11,14 L 34,14 L 31,16.5 L 14,16.5 z ",
-      drawingParameters: DrawingParameters(
-        strokeLineCap: StrokeCap.butt
-      )
-    ),
-    VectorImagePathDefinition(
-      path: "M 11,14 L 11,9 L 15,9 L 15,11 L 20,11 L 20,9 L 25,9 L 25,11 L 30,11"
-          " L 30,9 L 34,9 L 34,14 L 11,14 z ",
-      drawingParameters: DrawingParameters(
-        strokeLineCap: StrokeCap.butt
-      ),
-    ),
-    VectorImagePathDefinition(
-      path: "M 12,35.5 L 33,35.5 L 33,35.5",
-      drawingParameters: DrawingParameters(
-          fillColor: null,
-        strokeColor: Colors.white,
-        strokeWidth: 1.0,
-        strokeLineJoin: StrokeJoin.miter
-      ),
-    ),
+            drawingZone: position & Size.square(size),
+            baseImageSize: 45.0,
+            painter:
+                VectorImagePainter(vectorDefinition: <VectorDrawableElement>[
+              VectorImageGroup(
+                  children: <VectorDrawableElement>[
+                    VectorImagePathDefinition(
+                        path: "M 9,39 L 36,39 L 36,36 L 9,36 L 9,39 z ",
+                        drawingParameters:
+                            DrawingParameters(strokeLineCap: StrokeCap.butt)),
+                    VectorImagePathDefinition(
+                        path:
+                            "M 12.5,32 L 14,29.5 L 31,29.5 L 32.5,32 L 12.5,32 z ",
+                        drawingParameters:
+                            DrawingParameters(strokeLineCap: StrokeCap.butt)),
+                    VectorImagePathDefinition(
+                        path: "M 12,36 L 12,32 L 33,32 L 33,36 L 12,36 z ",
+                        drawingParameters:
+                            DrawingParameters(strokeLineCap: StrokeCap.butt)),
+                    VectorImagePathDefinition(
+                        path:
+                            "M 14,29.5 L 14,16.5 L 31,16.5 L 31,29.5 L 14,29.5 z ",
+                        drawingParameters: DrawingParameters(
+                            strokeLineCap: StrokeCap.butt,
+                            strokeLineJoin: StrokeJoin.miter)),
+                    VectorImagePathDefinition(
+                        path:
+                            "M 14,16.5 L 11,14 L 34,14 L 31,16.5 L 14,16.5 z ",
+                        drawingParameters:
+                            DrawingParameters(strokeLineCap: StrokeCap.butt)),
+                    VectorImagePathDefinition(
+                      path:
+                          "M 11,14 L 11,9 L 15,9 L 15,11 L 20,11 L 20,9 L 25,9 L 25,11 L 30,11"
+                          " L 30,9 L 34,9 L 34,14 L 11,14 z ",
+                      drawingParameters:
+                          DrawingParameters(strokeLineCap: StrokeCap.butt),
+                    ),
+                    VectorImagePathDefinition(
+                      path: "M 12,35.5 L 33,35.5 L 33,35.5",
+                      drawingParameters: DrawingParameters(
+                          fillColor: null,
+                          strokeColor: Colors.white,
+                          strokeWidth: 1.0,
+                          strokeLineJoin: StrokeJoin.miter),
+                    ),
+                    VectorImagePathDefinition(
+                      path: "M 13,31.5 L 32,31.5",
+                      drawingParameters: DrawingParameters(
+                          fillColor: null,
+                          strokeColor: Colors.white,
+                          strokeWidth: 1.0,
+                          strokeLineJoin: StrokeJoin.miter),
+                    ),
+                    VectorImagePathDefinition(
+                      path: "M 14,29.5 L 31,29.5",
+                      drawingParameters: DrawingParameters(
+                          fillColor: null,
+                          strokeColor: Colors.white,
+                          strokeWidth: 1.0,
+                          strokeLineJoin: StrokeJoin.miter),
+                    ),
+                    VectorImagePathDefinition(
+                      path: "M 14,16.5 L 31,16.5",
+                      drawingParameters: DrawingParameters(
+                          fillColor: null,
+                          strokeColor: Colors.white,
+                          strokeWidth: 1.0,
+                          strokeLineJoin: StrokeJoin.miter),
+                    ),
+                    VectorImagePathDefinition(
+                      path: "M 11,14 L 34,14",
+                      drawingParameters: DrawingParameters(
+                          fillColor: null,
+                          strokeColor: Colors.white,
+                          strokeWidth: 1.0,
+                          strokeLineJoin: StrokeJoin.miter),
+                    ),
+                  ],
+                  drawingParameters: DrawingParameters(
+                      fillColor: Colors.black,
+                      strokeColor: Colors.black,
+                      strokeWidth: 1.5,
+                      strokeLineCap: StrokeCap.round,
+                      strokeLineJoin: StrokeJoin.round,
+                      strokeLineMiterLimit: 4.0))
+            ]));
+}
 
-    VectorImagePathDefinition(
-      path: "M 13,31.5 L 32,31.5",
-      drawingParameters: DrawingParameters(
-          fillColor: null,
-          strokeColor: Colors.white,
-          strokeWidth: 1.0,
-          strokeLineJoin: StrokeJoin.miter
-      ),
-    ),
-
-    VectorImagePathDefinition(
-      path: "M 14,29.5 L 31,29.5",
-      drawingParameters: DrawingParameters(
-          fillColor: null,
-          strokeColor: Colors.white,
-          strokeWidth: 1.0,
-          strokeLineJoin: StrokeJoin.miter
-      ),
-    ),
-
-    VectorImagePathDefinition(
-      path: "M 14,16.5 L 31,16.5",
-      drawingParameters: DrawingParameters(
-          fillColor: null,
-          strokeColor: Colors.white,
-          strokeWidth: 1.0,
-          strokeLineJoin: StrokeJoin.miter
-      ),
-    ),
-
-    VectorImagePathDefinition(
-      path: "M 11,14 L 34,14",
-      drawingParameters: DrawingParameters(
-          fillColor: null,
-          strokeColor: Colors.white,
-          strokeWidth: 1.0,
-          strokeLineJoin: StrokeJoin.miter
-      ),
-    ),
-  ],
-  drawingParameters: DrawingParameters(
-      fillColor: Colors.black,
-      strokeColor: Colors.black,
-      strokeWidth: 1.5,
-      strokeLineCap: StrokeCap.round,
-      strokeLineJoin: StrokeJoin.round,
-      strokeLineMiterLimit: 4.0))]));
+class WhiteQueen extends BaseVector {
+  WhiteQueen({Offset position = Offset.zero, double size = 45.0})
+      : super(
+            drawingZone: position & Size.square(size),
+            baseImageSize: 45.0,
+            painter:
+                VectorImagePainter(vectorDefinition: <VectorDrawableElement>[
+              VectorImageGroup(
+                  children: <VectorDrawableElement>[
+                    VectorImagePathDefinition(
+                        path: "M 9 13 A 2 2 0 1 1  5,13 A 2 2 0 1 1  9 13 z",
+                        drawingParameters:
+                            DrawingParameters(translate: Offset(-1.0, -1.0))),
+                    VectorImagePathDefinition(
+                        path: "M 9 13 A 2 2 0 1 1  5,13 A 2 2 0 1 1  9 13 z",
+                        drawingParameters:
+                            DrawingParameters(translate: Offset(15.5, -5.5))),
+                    VectorImagePathDefinition(
+                        path: "M 9 13 A 2 2 0 1 1  5,13 A 2 2 0 1 1  9 13 z",
+                        drawingParameters:
+                            DrawingParameters(translate: Offset(32.0, -1.0))),
+                    VectorImagePathDefinition(
+                        path: "M 9 13 A 2 2 0 1 1  5,13 A 2 2 0 1 1  9 13 z",
+                        drawingParameters:
+                            DrawingParameters(translate: Offset(7.0, -4.5))),
+                    VectorImagePathDefinition(
+                        path: "M 9 13 A 2 2 0 1 1  5,13 A 2 2 0 1 1  9 13 z",
+                        drawingParameters:
+                            DrawingParameters(translate: Offset(24.0, -4.0))),
+                    VectorImagePathDefinition(
+                      path:
+                          "M 9,26 C 17.5,24.5 30,24.5 36,26 L 38,14 L 31,25 L 31,11 L 25.5,"
+                          "24.5 L 22.5,9.5 L 19.5,24.5 L 14,10.5 L 14,25 L 7,14 L 9,26 z ",
+                      drawingParameters:
+                          DrawingParameters(strokeLineCap: StrokeCap.butt),
+                    ),
+                    VectorImagePathDefinition(
+                      path:
+                          "M 9,26 C 9,28 10.5,28 11.5,30 C 12.5,31.5 12.5,31 12,33.5 C "
+                          "10.5,34.5 10.5,36 10.5,36 C 9,37.5 11,38.5 11,38.5 C 17.5,39.5 "
+                          "27.5,39.5 34,38.5 C 34,38.5 35.5,37.5 34,36 C 34,36 34.5,34.5 "
+                          "33,33.5 C 32.5,31 32.5,31.5 33.5,30 C 34.5,28 36,28 36,26 C 27.5,"
+                          "24.5 17.5,24.5 9,26 z ",
+                      drawingParameters:
+                          DrawingParameters(strokeLineCap: StrokeCap.butt),
+                    ),
+                    VectorImagePathDefinition(
+                        path: "M 11.5,30 C 15,29 30,29 33.5,30",
+                        drawingParameters: DrawingParameters(fillColor: null)),
+                    VectorImagePathDefinition(
+                        path: "M 12,33.5 C 18,32.5 27,32.5 33,33.5",
+                        drawingParameters: DrawingParameters(fillColor: null)),
+                  ],
+                  drawingParameters: DrawingParameters(
+                      fillColor: Colors.white,
+                      strokeColor: Colors.black,
+                      strokeWidth: 1.5,
+                      strokeLineCap: StrokeCap.round,
+                      strokeLineJoin: StrokeJoin.round,
+                      strokeLineMiterLimit: 4.0))
+            ]));
 }

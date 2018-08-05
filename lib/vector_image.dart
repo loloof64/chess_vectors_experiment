@@ -72,6 +72,8 @@ DrawingParameters mergeDrawingParameters(
           parentDrawingParameters.strokeLineJoin,
       strokeLineMiterLimit: thisDrawingParameters.strokeLineMiterLimit ??
           parentDrawingParameters.strokeLineMiterLimit,
+      translate:
+          thisDrawingParameters.translate ?? parentDrawingParameters.translate,
       transformMatrixValues: thisDrawingParameters.transformMatrix ??
           parentDrawingParameters.transformMatrix);
   return usedDrawingParameters;
@@ -106,6 +108,7 @@ class DrawingParameters {
   StrokeCap strokeLineCap;
   StrokeJoin strokeLineJoin;
   double strokeLineMiterLimit;
+  Offset translate;
   Float64List transformMatrix;
 
   DrawingParameters(
@@ -114,6 +117,7 @@ class DrawingParameters {
       this.strokeWidth,
       this.strokeLineCap,
       this.strokeLineJoin,
+      this.translate,
       this.strokeLineMiterLimit,
       List<double> transformMatrixValues})
       : transformMatrix = convertListIntoMatrix4(transformMatrixValues);
@@ -127,6 +131,7 @@ class DrawingParameters {
         "strokeLineCap = $strokeLineCap,"
         "strokeLineJoin = $strokeLineJoin,"
         "strokeLineMiterLimit = $strokeLineMiterLimit,"
+        "translate = $translate,"
         "transfromMatrix = $transformMatrix"
         ")";
   }
@@ -179,6 +184,10 @@ class VectorImagePathDefinition extends VectorDrawableElement {
     targetCanvas.save();
     if (drawingParameters.transformMatrix != null) {
       targetCanvas.transform(drawingParameters.transformMatrix);
+    }
+    if (drawingParameters.translate != null) {
+      targetCanvas.translate(
+          drawingParameters.translate.dx, drawingParameters.translate.dy);
     }
 
     var commonPath = new Path();

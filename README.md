@@ -50,9 +50,9 @@ class MyHomePage extends StatelessWidget {
 
 [X] White Rook
 
-[ ] Black Rook
+[X] Black Rook
 
-[ ] White Queen
+[X] White Queen
 
 [ ] Black Queen
 
