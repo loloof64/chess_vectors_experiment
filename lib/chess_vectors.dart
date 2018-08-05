@@ -323,8 +323,8 @@ class WhiteRook extends VectorBase {
             ]));
 }
 
-class BlackRoot extends VectorBase {
-  BlackRoot({Offset position = Offset.zero, double size = 45.0})
+class BlackRook extends VectorBase {
+  BlackRook({Offset position = Offset.zero, double size = 45.0})
       : super(
             drawingZone: position & Size.square(size),
             baseImageSize: 45.0,

@@ -21,7 +21,8 @@ abstract class VectorBase extends CustomPaint {
     Rect drawingZone,
   }) : super(
             painter: painterWithDrawingZoneAndBaseImageSizeSet(
-                painter, drawingZone, baseImageSize));
+                painter, drawingZone, baseImageSize),
+  size: Size(drawingZone.width, drawingZone.height));
 }
 
 class VectorImagePainter extends CustomPainter {

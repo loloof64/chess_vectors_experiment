@@ -21,30 +21,38 @@ class MyHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    const commonSize = 50.0;
     return new Scaffold(
         appBar: new AppBar(
           title: new Text('Chess vectors experiment'),
           backgroundColor: Colors.blue,
         ),
         body: Container(
-          decoration: BoxDecoration(
-            color: Colors.red,
-          ),
-          child: Row(
-            children: <Widget>[
-              WhitePawn(position: Offset.zero, size: 50.0),
-              BlackPawn(position: Offset(0.0, 50.0), size: 50.0),
-              WhiteKnight(position: Offset(50.0, 0.0), size: 50.0),
-              BlackKnight(position: Offset(50.0, 50.0), size: 50.0),
-              WhiteBishop(position: Offset(100.0, 0.0), size: 50.0),
-              BlackBishop(position: Offset(100.0, 50.0), size: 50.0),
-              WhiteRook(position: Offset(150.0, 0.0), size: 50.0),
-              BlackRoot(position: Offset(150.0, 50.0), size: 50.0),
-              WhiteQueen(position: Offset(200.0, 0.0), size: 50.0),
-              BlackQueen(position: Offset(200.0, 50.0), size: 50.0),
-              WhiteKing(position: Offset(250.0, 0.0), size: 50.0),
-            ],
-          ),
-        ));
+            decoration: BoxDecoration(
+              color: Colors.red,
+            ),
+            child: Column(
+              children: <Widget>[
+                Row(
+                  children: <Widget>[
+                    WhitePawn(size: commonSize),
+                    WhiteKnight(size: commonSize),
+                    WhiteBishop(size: commonSize),
+                    WhiteRook(size: commonSize),
+                    WhiteQueen(size: commonSize),
+                    WhiteKing(size: commonSize)
+                  ],
+                ),
+                Row(
+                  children: <Widget>[
+                    BlackPawn(size: commonSize),
+                    BlackKnight(size: commonSize),
+                    BlackBishop(size: commonSize),
+                    BlackRook(size: commonSize),
+                    BlackQueen(size: commonSize),
+                  ],
+                )
+              ],
+            )));
   }
 }
