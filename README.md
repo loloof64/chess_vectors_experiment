@@ -35,17 +35,29 @@ class MyHomePage extends StatelessWidget {
 ## Current status
 
 [X] The vectors can be moved and resized
-[ ] White Pawn
-[ ] Black Pawn
+
+[X] White Pawn
+
+[X] Black Pawn
+
 [X] White Knight
+
 [X] Black Knight
+
 [X] White Bishop
+
 [X] Black Bishop
+
 [ ] White Rook
+
 [ ] Black Rook
+
 [ ] White Queen
+
 [ ] Black Queen
+
 [ ] White King
+
 [ ] Black King
 
 ## CREDITS
