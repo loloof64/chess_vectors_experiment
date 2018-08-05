@@ -26,20 +26,25 @@ class MyHomePage extends StatelessWidget {
           title: new Text('Chess vectors experiment'),
           backgroundColor: Colors.blue,
         ),
-        body: Row(
-          children: <Widget>[
-            WhitePawn(position: Offset.zero, size: 50.0),
-            BlackPawn(position: Offset(0.0, 50.0), size: 50.0),
-            WhiteKnight(position: Offset(50.0, 0.0), size: 50.0),
-            BlackKnight(position: Offset(50.0, 50.0), size: 50.0),
-            WhiteBishop(position: Offset(100.0, 0.0), size: 50.0),
-            BlackBishop(position: Offset(100.0, 50.0), size: 50.0),
-            WhiteRook(position: Offset(150.0, 0.0), size: 50.0),
-            BlackRoot(position: Offset(150.0, 50.0), size: 50.0),
-            WhiteQueen(position: Offset(200.0, 0.0), size: 50.0),
-            BlackQueen(position: Offset(200.0, 50.0), size: 50.0),
-            WhiteKing(position: Offset(250.0, 0.0), size: 50.0),
-          ],
+        body: Container(
+          decoration: BoxDecoration(
+            color: Colors.red,
+          ),
+          child: Row(
+            children: <Widget>[
+              WhitePawn(position: Offset.zero, size: 50.0),
+              BlackPawn(position: Offset(0.0, 50.0), size: 50.0),
+              WhiteKnight(position: Offset(50.0, 0.0), size: 50.0),
+              BlackKnight(position: Offset(50.0, 50.0), size: 50.0),
+              WhiteBishop(position: Offset(100.0, 0.0), size: 50.0),
+              BlackBishop(position: Offset(100.0, 50.0), size: 50.0),
+              WhiteRook(position: Offset(150.0, 0.0), size: 50.0),
+              BlackRoot(position: Offset(150.0, 50.0), size: 50.0),
+              WhiteQueen(position: Offset(200.0, 0.0), size: 50.0),
+              BlackQueen(position: Offset(200.0, 50.0), size: 50.0),
+              WhiteKing(position: Offset(250.0, 0.0), size: 50.0),
+            ],
+          ),
         ));
   }
 }

@@ -596,12 +596,18 @@ class WhiteKing extends VectorBase {
                         path:
                             "M 11.5,37 C 17,40.5 27,40.5 32.5,37 L 32.5,30 C"
                                 " 32.5,30 41.5,25.5 38.5,19.5 C 34.5,13 25,16"
-                                " 22.5,23.5 L 22.5,27 L 22.5,23.5 C 19,16 9.5,13"
-                                " 6.5,19.5 C 3.5,25.5 11.5,29.5 11.5,29.5 L"
-                                " 11.5,37 z ",
+                                " 22.5,23.5 L 22.5,27" ,
                         drawingParameters: DrawingParameters(
                             fillColor: Colors.white,
                             strokeColor: Colors.black)),
+                    VectorImagePathDefinition(
+                      path: "M 22.5,27 L 22.5,23.5 C 19,16 9.5,13"
+                          " 6.5,19.5 C 3.5,25.5 11.5,29.5 11.5,29.5 L"
+                          " 11.5,37",
+                        drawingParameters: DrawingParameters(
+                            fillColor: Colors.white,
+                            strokeColor: Colors.black),
+                    ),
                     VectorImagePathDefinition(
                         path: "M 11.5,30 C 17,27 27,27 32.5,30",
                         drawingParameters: DrawingParameters(
