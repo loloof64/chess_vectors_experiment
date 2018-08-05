@@ -314,7 +314,7 @@ class WhiteRook extends VectorBase {
                             strokeLineJoin: StrokeJoin.miter))
                   ],
                   drawingParameters: DrawingParameters(
-                      fillColor: null,
+                      fillColor: Colors.white,
                       strokeColor: Colors.black,
                       strokeWidth: 1.5,
                       strokeLineCap: StrokeCap.round,
