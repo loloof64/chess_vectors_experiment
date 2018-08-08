@@ -231,6 +231,13 @@ class VectorImagePathDefinition extends VectorDrawableElement {
       element.addToPath(commonPath);
     });
 
+    if (usedDrawingParameters.fillColor != null) {
+      var fillPathPaint = new Paint()
+        ..style = PaintingStyle.fill
+        ..color = usedDrawingParameters.fillColor;
+      targetCanvas.drawPath(commonPath, fillPathPaint);
+    }
+
     var strokePathPaint = new Paint()
       ..style = PaintingStyle.stroke
       ..color = usedDrawingParameters.strokeColor
@@ -246,13 +253,6 @@ class VectorImagePathDefinition extends VectorDrawableElement {
           usedDrawingParameters.strokeLineMiterLimit;
     }
     targetCanvas.drawPath(commonPath, strokePathPaint);
-
-    if (usedDrawingParameters.fillColor != null) {
-      var fillPathPaint = new Paint()
-        ..style = PaintingStyle.fill
-        ..color = usedDrawingParameters.fillColor;
-      targetCanvas.drawPath(commonPath, fillPathPaint);
-    }
 
     targetCanvas.restore();
   }
