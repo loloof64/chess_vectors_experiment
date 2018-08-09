@@ -1,4 +1,4 @@
-import 'package:chess_vectors_experiment/chess_vectors.dart';
+import 'package:chess_vectors_flutter/chess_vectors_flutter.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(new MyApp());
